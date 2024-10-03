@@ -4,9 +4,26 @@ const Product = require('../models/product.model')
 const productRouter = Router()
 
 productRouter.get('/products', async(req, res) => {
-        try {
-                let products = await Product.find({})
-                console.log(products)
+        try {   
+                const { category, sort } = req.query;
+               
+
+                let query = {}
+                if(category) {
+                        query.category = category
+                }
+
+                
+
+                let sortOpt = {}
+                if(sort){
+                        const [field, order] = sort.split(":")
+                        sortOpt[field] = order == 'desc' ? -1 : 1
+                }
+
+                let products = await Product.find(query).sort(sortOpt)
+
+                //console.log(products)
                 res.status(200).json({
                         success: true,
                         message: "List of all products",
