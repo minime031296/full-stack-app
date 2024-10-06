@@ -13,8 +13,8 @@ const Products = () => {
             },
         })
         let data = await response.json()
-        setProdcuts(data)
-        console.log(data)
+        setProdcuts(data.products)
+        console.log(data.products)
     }
 
     useEffect(() => {
