@@ -1,6 +1,7 @@
 import { Box, Paper, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import Logout from './Logout'
+import Products from './Products'
 
 
 const Home = () => {
@@ -37,7 +38,10 @@ const Home = () => {
                 }}
             >
              {greeting ? 
-                (<Box><Typography sx={{fontSize:{xs:"0.5em", sm:"0.5em", md:"0.8em", "lg":"1.2em"}, fontFamily:"sans-serif "}}>{greeting}</Typography><Logout/></Box>): (<Typography>Please log in.</Typography>)}
+                (<Box><Typography sx={{fontSize:{xs:"0.5em", sm:"0.5em", md:"0.8em", "lg":"1.2em"}, fontFamily:"sans-serif "}}>{greeting}</Typography>
+                <Logout/>
+                <Products/>
+                </Box>): (<Typography>Please log in.</Typography>)}
                 
         </Paper>
        
