@@ -27,8 +27,8 @@ const Login = () => {
             }
 
             const data = await response.json();
-            localStorage.setItem('token', data.user.accessToken); 
-            console.log(data.user.accessToken)
+            localStorage.setItem('token', data.token.accessToken); 
+            console.log(data.token.accessToken)
             setSnackbarMessage('Login successful!');
             navigate("/")
             setSnackbarOpen(true);
