@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 
 //Middleware cors
 const corsOption = {
-  origin: ['http://localhost:5173'],
+  origin: ['https://full-stack-app-delta.vercel.app'],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
 }
